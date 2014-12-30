@@ -1,6 +1,10 @@
 'use strict'
 
-var UserFeed = require('./UserFeed'),
+var SocialFeed = require('./SocialFeed'),
     React = require('react');
 
-React.render(<UserFeed />, document.getElementById('content'));
+React.render(
+  <SocialFeed
+    url="http://localhost:9000/api/1.0/users/trevorbernard"
+    foo="bar"/>,
+    document.getElementById('content'));
