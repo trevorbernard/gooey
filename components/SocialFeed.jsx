@@ -25,16 +25,14 @@ var SocialFeed = React.createClass({
     setInterval(this.loadSocialFeed, 2000);
   },
   render: function() {
+    var commentNodes = this.state.data.map(function (user) {
+      return (
+        <li>{user.name} - <b>{user.description}</b></li>
+      );
+    });
     return (
       <div className="social-feed">
-    {this.props.foo} - <a href="#"> Say Whatt?</a>
-      <table>
-        <tr>
-          <td>{this.state.data.name}</td>
-          <td>{this.state.data.description}</td>
-        </tr>
-      </table>
-
+        {commentNodes}
       </div>
     );
   }
